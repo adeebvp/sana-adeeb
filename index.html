@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- WhatsApp / Open Graph Meta Tags -->
+    <meta property="og:title" content="Wedding Invitation | Sana & Adeeb">
+    <meta property="og:description" content="We cordially invite you to join us in celebrating our sacred union on August 10th, 2026.">
+    <meta property="og:image" content="assets/1.jpg">
+    <meta property="og:url" content="https://yourusername.github.io/wedding-invite/">
+    <meta property="og:type" content="website">
+
+    <title>Sana & Adeeb | Wedding Invitation</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Music Toggle Button -->
+    <button id="music-toggle" class="music-btn hidden">
+        <span id="music-icon">🎵</span>
+    </button>
+
+    <!-- Opening Cover -->
+    <div id="cover-screen" class="cover-screen">
+        <div class="cover-content">
+            <h2 class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+            <h1>Sana & Adeeb</h1>
+            <p>August 10th, 2026</p>
+            <button id="open-btn" class="gold-btn">Tap to Open</button>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden Initially) -->
+    <main id="main-content" class="hidden">
+        
+        <!-- Header Section -->
+        <section class="section fade-in">
+            <h2 class="arabic">وَخَلَقْنَاكُمْ أَزْوَاجًا</h2>
+            <p class="quote">"And We have created you in pairs."</p>
+            
+            <div class="couple-names">
+                <h1>Sana Farvin</h1>
+                <span class="ampersand">&</span>
+                <h1>Adeeb Musthafa</h1>
+            </div>
+            
+            <p class="sub-text">TOGETHER WITH THEIR FAMILIES</p>
+            <p class="body-text">Request the honour of your presence<br>at the celebration of their nikah</p>
+            <div class="scroll-indicator">↓</div>
+        </section>
+
+        <!-- Formal Invitation Section -->
+        <section class="section card-bg fade-in">
+            <h2 class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+            <p class="italic-text">In the name of Allah, the Most Gracious, the Most Merciful</p>
+            <div class="divider">◆</div>
+            <p class="body-text">We cordially invite you and your family to join us in celebrating the sacred union of</p>
+            <h3 class="name-small">Sana Farvin</h3>
+            <p class="parents-text">D/O Azeez & Sulfath</p>
+            <p class="with-text">WITH</p>
+            <h3 class="name-small">Adeeb Musthafa</h3>
+            <p class="parents-text">S/O Late Mustafa PC & Haseena. VP</p>
+            <p class="body-text mt-2">Your presence and duas on this blessed occasion would mean the world to us.</p>
+        </section>
+
+        <!-- Scratch to Reveal Date & Countdown -->
+        <section class="section fade-in" id="date-section">
+            <p class="sub-text tracking-wide">SAVE THE DATE</p>
+            <h2>Scratch to Reveal</h2>
+            <p class="body-text mb-2">Uncover the blessed day of our nikah</p>
+            
+            <!-- Three Scratch Boxes -->
+            <div class="scratch-boxes-wrapper">
+                <!-- Day -->
+                <div class="scratch-box-container">
+                    <div class="revealed-content">
+                        <h2>10</h2>
+                        <p>DAY</p>
+                    </div>
+                    <canvas id="scratch-day" class="scratch-canvas"></canvas>
+                </div>
+                <!-- Month -->
+                <div class="scratch-box-container">
+                    <div class="revealed-content">
+                        <h2>AUG</h2>
+                        <p>MONTH</p>
+                    </div>
+                    <canvas id="scratch-month" class="scratch-canvas"></canvas>
+                </div>
+                <!-- Year -->
+                <div class="scratch-box-container">
+                    <div class="revealed-content">
+                        <h2>'27</h2>
+                        <p>YEAR</p>
+                    </div>
+                    <canvas id="scratch-year" class="scratch-canvas"></canvas>
+                </div>
+            </div>
+
+            <p class="hijri-date mt-1 mb-2">26th Safar 1449 AH</p>
+
+            <!-- Countdown -->
+            <div class="countdown-container mt-2">
+                <div class="time-box"><span id="days">00</span><p>DAYS</p></div><span class="colon">:</span>
+                <div class="time-box"><span id="hours">00</span><p>HOURS</p></div><span class="colon">:</span>
+                <div class="time-box"><span id="mins">00</span><p>MINS</p></div><span class="colon">:</span>
+                <div class="time-box"><span id="secs">00</span><p>SECS</p></div>
+            </div>
+            <!-- (Keep the rest of your event details below here) -->
+            <div class="divider">◆</div>
+            
+            <div class="event-details box-shadow">
+                <p class="sub-text">NIKAH CEREMONY</p>
+                <h2>11:00 AM</h2>
+                <h3>Wasava Cliff House</h3>
+                <p class="address">Kannur, Kerala</p>
+                <div class="btn-group">
+                    <a href="https://www.google.com/maps/place/Wasava+Cliff+House/@11.8603818,75.3574439,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba422b122441af3:0x969192eb9bb0dced!8m2!3d11.8603818!4d75.3574439!16s%2Fg%2F11f4045x5v?entry=ttu&g_ep=EgoyMDI2MDgxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="outline-btn">📍 VIEW ON GOOGLE MAPS</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section class="section fade-in">
+            <h2 class="gallery-title">Memories</h2>
+            <div class="gallery">
+                <img src="assets/1.jpg" alt="Sana & Adeeb 1" class="gallery-img">
+                <img src="assets/2.jpg" alt="Sana & Adeeb 2" class="gallery-img">
+                <img src="assets/3.jpg" alt="Sana & Adeeb 3" class="gallery-img">
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="section dark-section fade-in">
+            <p class="sub-text gold-text">RSVP</p>
+            <h2 class="light-text">Will you join us?</h2>
+            <p class="light-body">Kindly let us know if you can attend</p>
+            <div class="rsvp-buttons">
+                <!-- Replace +971000000000 with your actual WhatsApp number -->
+                <a href="https://wa.me/917994933594?text=I%20joyfully%20accept%20the%20invitation!" target="_blank" class="gold-btn w-full">JOYFULLY ACCEPT</a>
+                <a href="https://wa.me/917994933594?text=Regretfully,%20I%20will%20not%20be%20able%20to%20attend." target="_blank" class="outline-btn light-outline w-full">REGRETFULLY DECLINE</a>
+            </div>
+        </section>
+
+        <!-- Footer / Dua -->
+        <section class="section footer fade-in">
+            <h2 class="arabic">بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</h2>
+            <p class="italic-text mt-1">May Allah bless you, shower His blessings upon you,<br>and unite you both in goodness.</p>
+            <div class="divider mt-2">◆</div>
+            <p class="sub-text tracking-wide mt-1">YOUR PRESENCE IS OUR GREATEST GIFT<br>— PLEASE JOIN US IN PRAYERS</p>
+            <h3 class="footer-names mt-2">SANA FARVIN & ADEEB MUSTHAFA</h3>
+        </section>
+        
+    </main>
+
+    <!-- Container for falling petals -->
+    <div id="petal-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
