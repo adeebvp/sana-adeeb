@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     // 3. Countdown Timer Logic (Target updated to 2027)
-    const targetDate = new Date("Aug 10, 2027 11:00:00").getTime();
+    const targetDate = new Date("Aug 08, 2027 11:00:00").getTime();
     
     const interval = setInterval(() => {
         const now = new Date().getTime();
