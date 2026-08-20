@@ -247,109 +247,42 @@ canvas { position: absolute; top: 0; left: 0; border-radius: 8px; cursor: pointe
     }
 }
 
-/* --- New Envelope Cover Screen --- */
-.envelope-wrapper {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100vh;
-    background: #132537; /* Dark background behind the envelope */
+/* --- Premium Video Reveal Cover --- */
+.video-cover-wrapper {
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100vh;
+    background: #000; 
     z-index: 9999;
     display: flex; justify-content: center; align-items: center;
-    transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
-.envelope {
-    position: relative;
-    width: 320px;
-    height: 220px;
-    margin-top: -50px;
+#envelope-video {
+    position: absolute; 
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; 
+    pointer-events: none; 
 }
 
-/* Envelope Back */
-.envelope-back {
+.wax-seal-btn {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: #e6c8c8; /* Soft pink back */
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-/* Envelope Front Pocket (using CSS borders to make triangles) */
-.envelope-front {
-    position: absolute;
-    bottom: 0; left: 0; width: 100%; height: 100%;
-    border-left: 160px solid #f2d8d8;
-    border-right: 160px solid #f2d8d8;
-    border-bottom: 110px solid #eecaca;
-    border-top: 110px solid transparent;
-    border-radius: 4px;
-    pointer-events: none;
-    z-index: 3;
-}
-
-/* The Flap */
-.envelope-flap {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 0;
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
-    border-top: 130px solid #e6c8c8; /* Matches the back */
-    transform-origin: top;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 4;
-}
-
-/* The Letter inside */
-.letter {
-    position: absolute;
-    top: 10px; left: 10px; right: 10px; bottom: 10px;
-    background: #fff;
-    border-radius: 4px;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.8s ease-in-out;
-    z-index: 2; /* Sits between back and front */
-}
-
-.wax-seal {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px; height: 60px;
-    background: radial-gradient(circle, #C5A059 40%, #b38745 100%);
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 0 5px rgba(255,255,255,0.4);
-    display: flex; justify-content: center; align-items: center;
-    color: white; font-family: var(--font-heading); font-weight: bold; font-size: 1.2rem;
-    cursor: pointer; z-index: 5;
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.wax-seal:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.tap-instruction {
-    position: absolute;
-    bottom: -40px; left: 0; width: 100%;
-    text-align: center; color: var(--gold); font-size: 0.9rem;
-    letter-spacing: 2px; text-transform: uppercase;
+    bottom: 15%; /* Moves the button down below the envelope */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 12px 30px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    color: white; 
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer; 
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease; /* Ensures smooth disappearance */
     animation: pulse 2s infinite;
-}
-
-/* --- Animation Classes triggered by JS --- */
-.envelope.open .envelope-flap {
-    transform: rotateX(180deg);
-    z-index: 1; /* Move behind letter when open */
-}
-
-.envelope.open .letter {
-    transform: translateY(-100px); /* Slide letter up */
-}
-
-.envelope.open .wax-seal, 
-.envelope.open .tap-instruction {
-    opacity: 0;
-    pointer-events: none;
 }
