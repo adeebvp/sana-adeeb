@@ -268,7 +268,7 @@ canvas { position: absolute; top: 0; left: 0; border-radius: 8px; cursor: pointe
 
 .wax-seal-btn {
     position: absolute;
-    bottom: 15%; /* Moves the button down below the envelope */
+    bottom: 25%; /* Moves the button down below the envelope */
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
