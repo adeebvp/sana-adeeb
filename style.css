@@ -268,12 +268,13 @@ canvas { position: absolute; top: 0; left: 0; border-radius: 8px; cursor: pointe
 
 .wax-seal-btn {
     position: absolute;
-    top: 5%; /* Moves the button down below the envelope */
+    /* This finds the exact middle (50%), then pushes it down 130 pixels below the seal */
+    top: calc(50% + 200px); 
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
     padding: 12px 30px;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.15); /* Added a slight dark tint so you can read the white text on desktop! */
     border: 1px solid var(--gold);
     border-radius: 30px;
     color: white; 
@@ -283,6 +284,6 @@ canvas { position: absolute; top: 0; left: 0; border-radius: 8px; cursor: pointe
     text-transform: uppercase;
     cursor: pointer; 
     backdrop-filter: blur(5px);
-    transition: opacity 0.3s ease; /* Ensures smooth disappearance */
+    transition: opacity 0.3s ease; 
     animation: pulse 2s infinite;
 }

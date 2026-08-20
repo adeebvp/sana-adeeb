@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
             openBtn.style.opacity = '0';
             openBtn.style.pointerEvents = 'none';
 
+            // Hide the tap button IMMEDIATELY with no fade delay
+            openBtn.style.display = 'none';
+
             // Play the 3D envelope video
             envelopeVideo.play();
 
