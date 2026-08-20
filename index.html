@@ -29,13 +29,33 @@
         <span id="music-icon">🎵</span>
     </button>
 
-    <!-- Opening Cover -->
-    <div id="cover-screen" class="cover-screen">
-        <div class="cover-content">
-            <h2 class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
-            <h1>Sana & Adeeb</h1>
-            <p>August 08th, 2027</p>
-            <button id="open-btn" class="gold-btn">Tap to Open</button>
+    <!-- New Envelope Opening Cover -->
+    <div id="cover-screen" class="envelope-wrapper">
+        <div class="envelope" id="envelope">
+            <!-- The physical envelope parts -->
+            <div class="envelope-back"></div>
+            
+            <!-- The letter that slides out -->
+            <div class="letter" id="letter">
+                <div class="letter-content">
+                    <h2 class="arabic" style="color: var(--navy); font-size: 1.5rem;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+                    <h1 style="color: var(--navy); font-size: 2rem; margin: 10px 0;">Sana & Adeeb</h1>
+                    <p style="color: var(--navy);">August 08th, 2027</p>
+                </div>
+            </div>
+
+            <!-- The front pocket of the envelope -->
+            <div class="envelope-front"></div>
+            
+            <!-- The flap that opens -->
+            <div class="envelope-flap" id="flap"></div>
+            
+            <!-- The clickable wax seal -->
+            <div class="wax-seal" id="open-btn">
+                <span>S&A</span>
+            </div>
+            
+            <p class="tap-instruction">Tap the seal to open</p>
         </div>
     </div>
 
