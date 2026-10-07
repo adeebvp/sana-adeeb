@@ -2,21 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nikah of Sana Farvin & Adeeb Musthafa — 8th August 2027, Wasava Cliff House, Kannur.">
+    <meta name="theme-color" content="#132537">
+
     <!-- WhatsApp / Open Graph Meta Tags -->
     <meta property="og:title" content="Wedding Invitation | Sana & Adeeb">
-    <meta property="og:description" content="We cordially invite you to join us in celebrating our sacred union on August 18th, 2027.">
-    <meta property="og:image" content="https://adeebvp.github.io/sana-adeeb/assets/1.jpg">
+    <meta property="og:description" content="We cordially invite you to join us in celebrating our sacred union on August 8th, 2027.">
+    <meta property="og:image" content="https://adeebvp.github.io/sana-adeeb/assets/og-preview.jpg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="800">
     <meta property="og:url" content="https://adeebvp.github.io/sana-adeeb/">
     <meta property="og:type" content="website">
 
     <title>Sana & Adeeb | Wedding Invitation</title>
-    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css?v=2">
-    </head>
+    <link rel="stylesheet" href="style.css?v=7">
+</head>
 <body>
 
     <!-- Audio Element -->
@@ -25,8 +32,8 @@
     </audio>
 
     <!-- Floating Music Toggle Button -->
-    <button id="music-toggle" class="music-btn hidden">
-        <span id="music-icon">🎵</span>
+    <button id="music-toggle" class="music-btn hidden" type="button" aria-label="Pause music">
+        <span id="music-icon" aria-hidden="true">🎵</span>
     </button>
 
     <!-- Cinematic Video Reveal Cover -->
@@ -38,9 +45,9 @@
         </video>
         
         <!-- The button that triggers the video -->
-        <div class="wax-seal-btn" id="open-btn">
+        <button type="button" class="wax-seal-btn" id="open-btn">
             <span>Tap to Open</span>
-        </div>
+        </button>
         
     </div>
 
@@ -77,6 +84,51 @@
             <p class="body-text mt-2">Your presence and duas on this blessed occasion would mean the world to us.</p>
         </section>
 
+        <!-- Next Meetup: Scratch to Reveal & Countdown -->
+        <section class="section fade-in" id="meetup-section">
+            <p class="sub-text tracking-wide">COMING UP FIRST</p>
+            <h2>Next Meetup <span class="arabic-inline">إِنْ شَاءَ ٱللَّٰهُ</span></h2>
+            <p class="body-text mb-2">Scratch to uncover when we meet next, <span class="nowrap">In shā' Allāh</span></p>
+
+            <!-- Three Scratch Boxes -->
+            <div class="scratch-boxes-wrapper" id="meetup-boxes">
+                <!-- Day -->
+                <div class="scratch-box-container">
+                    <div class="revealed-content">
+                        <h2>16</h2>
+                        <p>DAY</p>
+                    </div>
+                    <canvas id="meetup-scratch-day" class="scratch-canvas"></canvas>
+                </div>
+                <!-- Month -->
+                <div class="scratch-box-container">
+                    <div class="revealed-content">
+                        <h2>DEC</h2>
+                        <p>MONTH</p>
+                    </div>
+                    <canvas id="meetup-scratch-month" class="scratch-canvas"></canvas>
+                </div>
+                <!-- Year -->
+                <div class="scratch-box-container">
+                    <div class="revealed-content">
+                        <h2>'26</h2>
+                        <p>YEAR</p>
+                    </div>
+                    <canvas id="meetup-scratch-year" class="scratch-canvas"></canvas>
+                </div>
+            </div>
+
+            <!-- Countdown -->
+            <div class="countdown-container mt-2">
+                <div class="time-box"><span id="meetup-days">00</span><p>DAYS</p></div><span class="colon">:</span>
+                <div class="time-box"><span id="meetup-hours">00</span><p>HOURS</p></div><span class="colon">:</span>
+                <div class="time-box"><span id="meetup-mins">00</span><p>MINS</p></div><span class="colon">:</span>
+                <div class="time-box"><span id="meetup-secs">00</span><p>SECS</p></div>
+            </div>
+            <p id="meetup-countdown-done" class="hijri-date hidden">Alhamdulillah — the day is here</p>
+            <div class="divider">◆</div>
+        </section>
+
         <!-- Scratch to Reveal Date & Countdown -->
         <section class="section fade-in" id="date-section">
             <p class="sub-text tracking-wide">SAVE THE DATE</p>
@@ -84,7 +136,7 @@
             <p class="body-text mb-2">Uncover the blessed day of our nikah</p>
             
             <!-- Three Scratch Boxes -->
-            <div class="scratch-boxes-wrapper">
+            <div class="scratch-boxes-wrapper" id="nikah-boxes">
                 <!-- Day -->
                 <div class="scratch-box-container">
                     <div class="revealed-content">
@@ -111,7 +163,7 @@
                 </div>
             </div>
 
-            <p class="hijri-date mt-1 mb-2">24th Safar 1449 AH</p>
+            <p class="hijri-date mt-1 mb-2">5th Rabi' al-Awwal 1449 AH</p>
 
             <!-- Countdown -->
             <div class="countdown-container mt-2">
@@ -120,7 +172,7 @@
                 <div class="time-box"><span id="mins">00</span><p>MINS</p></div><span class="colon">:</span>
                 <div class="time-box"><span id="secs">00</span><p>SECS</p></div>
             </div>
-            <!-- (Keep the rest of your event details below here) -->
+            <p id="countdown-done" class="hijri-date hidden">Alhamdulillah — the blessed day is here</p>
             <div class="divider">◆</div>
             
             <div class="event-details box-shadow">
@@ -138,9 +190,9 @@
         <section class="section fade-in">
             <h2 class="gallery-title">Memories</h2>
             <div class="gallery">
-                <img src="assets/1.jpg" alt="Sana & Adeeb 1" class="gallery-img">
-                <img src="assets/2.JPG" alt="Sana & Adeeb 2" class="gallery-img">
-                <img src="assets/3.JPG" alt="Sana & Adeeb 3" class="gallery-img">
+                <img src="assets/1.jpg" alt="Sana & Adeeb 1" class="gallery-img" width="1200" height="1600" loading="lazy" decoding="async">
+                <img src="assets/2.JPG" alt="Sana & Adeeb 2" class="gallery-img" width="1200" height="1600" loading="lazy" decoding="async">
+                <img src="assets/3.JPG" alt="Sana & Adeeb 3" class="gallery-img" width="900" height="1600" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -150,7 +202,6 @@
             <h2 class="light-text">Will you join us?</h2>
             <p class="light-body">Kindly let us know if you can attend</p>
             <div class="rsvp-buttons">
-                <!-- Replace +971000000000 with your actual WhatsApp number -->
                 <a href="https://wa.me/917994933594?text=I%20joyfully%20accept%20the%20invitation!" target="_blank" class="gold-btn w-full">JOYFULLY ACCEPT</a>
                 <a href="https://wa.me/917994933594?text=Regretfully,%20I%20will%20not%20be%20able%20to%20attend." target="_blank" class="outline-btn light-outline w-full">REGRETFULLY DECLINE</a>
             </div>
@@ -170,6 +221,6 @@
     <!-- Container for falling petals -->
     <div id="petal-container"></div>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>
