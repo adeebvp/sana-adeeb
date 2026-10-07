@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ---------------------------------------------------------
     // 5. Countdown Timers (all times are India time, IST +05:30)
     // ---------------------------------------------------------
-    // prefix '' uses #days/#hours/..., prefix 'meetup-' uses #meetup-days/...
+    // prefix '' uses #days/#hours/#mins/#secs
     function startCountdown(targetISO, prefix, doneId) {
         const targetDate = new Date(targetISO).getTime();
 
@@ -139,16 +139,12 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCountdown();
     }
 
-    // Next Meetup: Dec 16, 2026
-    startCountdown("2026-12-16T00:00:00+05:30", "meetup-", "meetup-countdown-done");
     // Nikah: Aug 08, 2027, 11:00 AM
     startCountdown("2027-08-08T11:00:00+05:30", "", "countdown-done");
 
     // ---------------------------------------------------------
     // 6. Scratch to Reveal (groups of three boxes)
     // ---------------------------------------------------------
-    setupScratchGroup(['meetup-scratch-day', 'meetup-scratch-month', 'meetup-scratch-year'],
-        () => triggerHeartBurst(document.getElementById('meetup-boxes')));
     setupScratchGroup(['scratch-day', 'scratch-month', 'scratch-year'], triggerPetals);
 
     function setupScratchGroup(scratchIds, onAllRevealed) {
@@ -216,42 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ---------------------------------------------------------
-    // 7a. Golden Heart Burst (Next Meetup reveal)
-    // ---------------------------------------------------------
-    function triggerHeartBurst(boxesEl) {
-        if (!boxesEl) return;
-
-        // Make the revealed boxes glow
-        boxesEl.classList.add('celebrate');
-
-        const rect = boxesEl.getBoundingClientRect();
-        const originX = rect.left + rect.width / 2;
-        const originY = rect.top + rect.height / 2;
-
-        for (let i = 0; i < 24; i++) {
-            const heart = document.createElement('div');
-            heart.classList.add('heart-burst');
-            heart.innerHTML = '<svg viewBox="0 0 24 24" width="100%" height="100%"><path fill="currentColor" d="M20.8 4.6a5.5 5.5 0 00-7.7 0l-1.1 1-1.1-1a5.5 5.5 0 00-7.8 7.8l1.1 1.1L12 21.3l7.8-7.8 1.1-1.1a5.5 5.5 0 000-7.8z"/></svg>';
-
-            // Fly outwards in a ring, drifting slightly upwards
-            const angle = (i / 24) * Math.PI * 2 + Math.random() * 0.3;
-            const distance = 90 + Math.random() * 110;
-            const size = 10 + Math.random() * 12;
-            heart.style.left = originX + 'px';
-            heart.style.top = originY + 'px';
-            heart.style.width = size + 'px';
-            heart.style.height = size + 'px';
-            heart.style.setProperty('--dx', Math.cos(angle) * distance + 'px');
-            heart.style.setProperty('--dy', Math.sin(angle) * distance - 40 + 'px');
-            heart.style.animationDelay = Math.random() * 0.2 + 's';
-            document.body.appendChild(heart);
-
-            setTimeout(() => { heart.remove(); }, 2000);
-        }
-    }
-
-    // ---------------------------------------------------------
-    // 7b. Falling Petal Effect (Nikah reveal)
+    // 7. Falling Petal Effect
     // ---------------------------------------------------------
     function triggerPetals() {
         const container = document.getElementById('petal-container');
